@@ -1,15 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class TemplateBehavior : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+namespace Template.Assets.Scripts
+{
+  public class TemplateBehavior : MonoBehaviour
+  {
+    
+  }
 }
