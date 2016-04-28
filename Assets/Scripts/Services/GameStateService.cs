@@ -7,12 +7,12 @@ namespace Template.Assets.Scripts.Services
 
     public delegate void GameStateChangeEvent();
 
-    public static event GameStateChangeEvent OnAwake;
-    public static event GameStateChangeEvent OnStart;
     public static event GameStateChangeEvent OnUpdate;
     public static event GameStateChangeEvent OnFixedUpdate;
     public static event GameStateChangeEvent OnPause;
     public static event GameStateChangeEvent OnResume;
+
+    protected float TimeScale = 1f;
 
     protected bool _paused = false;
     public bool Paused
@@ -24,43 +24,36 @@ namespace Template.Assets.Scripts.Services
         {
           if (value)
           {
+            TimeScale = Time.timeScale;
             Time.timeScale = 0;
-            OnPause?.Invoke();
+            if (OnPause != null)
+            {
+              OnPause();
+            }
           }
           else
           {
-            Time.timeScale = 1;
-            OnResume?.Invoke();
+            Time.timeScale = TimeScale;
+            if (OnResume != null)
+            {
+              OnResume();
+            }
           }
         }
         _paused = value;
       }
     }
 
-    void Awake()
-    {
-      OnAwake?.Invoke();
-    }
-
-    void Start()
-    {
-      OnStart?.Invoke();
-    }
-
     void Update()
     {
-      if (!Paused)
-      {
-        OnUpdate?.Invoke();
-      }
+      if (Paused || OnUpdate != null) return;
+      OnUpdate();
     }
 
     void FixedUpdate()
     {
-      if (!Paused)
-      {
-        OnFixedUpdate?.Invoke();
-      }
+      if (Paused || OnFixedUpdate == null) return;
+      OnFixedUpdate();
     }
   }
 }
