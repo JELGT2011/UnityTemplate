@@ -1,4 +1,16 @@
 
+### PROJECT ###
+# put project specific gitignore rules here
+# WARNING: if you use https://www.gitignore.io, keep in mind that the Visual
+# Studio gitignore shim will ignore .meta files, which are required by Unity3D
+# in order to keep track of references, and doing so will break your repo.
+# Do not gitignore .meta files.
+
+temp
+tmp
+.idea
+
+
 # Created by https://www.gitignore.io/api/osx,linux,windows,intellij,unity
 
 ### OSX ###
@@ -143,4 +155,3 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-
