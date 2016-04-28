@@ -4,16 +4,36 @@ using UnityEngine;
 
 namespace Template.Assets.Scripts.Services
 {
+  /// <summary>
+  /// This service provides a wrapper for Unity's default <see cref="Input"/> class, allowing for the
+  /// ability to directly call a touch callback on an <see cref="Entity"/> object, as well as functionality
+  /// for persisting previous touch events.
+  /// </summary>
   public class InputService : MonoBehaviour
   {
 
+    /// ----------
+    /// PROPERTIES
+    /// ----------
+
+    /// <summary>
+    /// The last touch position, translated into world space as a <see cref="Vector2"/>, where the z axis
+    /// is 0.
+    /// </summary>
     [NonSerialized]
     public Vector2 LastInputPosition;
 
+    /// <summary>
+    /// The last entity that was touched.
+    /// </summary>
     [NonSerialized]
     public Entity LastInputEntity;
 
-    void Update()
+    /// -----------------
+    /// PROTECTED METHODS
+    /// -----------------
+
+    protected void Update()
     {
       if (Input.touchCount == 0) return;
 
