@@ -1,6 +1,7 @@
 ﻿using System;
-using Template.Assets.Scripts.Entities;
 using UnityEngine;
+
+using Template.Assets.Scripts.Entities;
 
 namespace Template.Assets.Scripts.Services
 {

@@ -1,11 +1,11 @@
-﻿using Template.Assets.Scripts.Entities;
+﻿using System;
 using UnityEngine;
 
 namespace Template.Assets.Scripts.Services
 {
   /// <summary>
   /// This is a global service that controls the state of the game.  It calls the OnUpdate, OnFixedUpdate,
-  /// OnPause, and OnResume on all <see cref="Entity"/> instances that subscribe via the OnEnable base
+  /// OnPause, and OnResume on all <see cref="Template.Assets.Scripts.Entities.Entity"/> instances that subscribe via the OnEnable base
   /// function.
   /// </summary>
   public class GameStateService : MonoBehaviour
@@ -21,7 +21,7 @@ namespace Template.Assets.Scripts.Services
     public delegate void GameStateChangeEvent();
 
     /// <summary>
-    /// Events that will be called on all <see cref="Entity"/> instances.
+    /// Events that will be called on all <see cref="Template.Assets.Scripts.Entities.Entity"/> instances.
     /// </summary>
     public static event GameStateChangeEvent OnUpdate;
     public static event GameStateChangeEvent OnFixedUpdate;
