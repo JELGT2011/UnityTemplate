@@ -8,9 +8,11 @@
 
 temp
 tmp
+.idea
 Libraries/
 Libraries.meta
-.idea
+Plugins/
+Plugins.meta
 
 
 # Created by https://www.gitignore.io/api/osx,linux,windows,intellij,unity
