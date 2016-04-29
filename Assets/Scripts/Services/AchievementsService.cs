@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Template.Assets.Scripts.Services
 {
-  public class ServiceTemplate : MonoBehaviour
+  public class AchievementsService : MonoBehaviour
   {
 
   }

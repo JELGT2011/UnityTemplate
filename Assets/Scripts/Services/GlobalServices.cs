@@ -28,6 +28,13 @@ namespace Template.Assets.Scripts.Services
     [HideInInspector]
     public InputService Input;
 
+    /// <summary>
+    /// A reference to an instance of <see cref="AchievementsService"/>.
+    /// </summary>
+    [NonSerialized]
+    [HideInInspector]
+    public AchievementsService Achievements;
+
     /// -----------------
     /// PROTECTED METHODS
     /// -----------------
@@ -44,6 +51,12 @@ namespace Template.Assets.Scripts.Services
       {
         GameObject _inputServiceObject = Resources.Load("Prefabs/Services/InputService") as GameObject;
         Input = _inputServiceObject.GetComponent<InputService>();
+      }
+
+      if (Achievements == null)
+      {
+        GameObject _achievementsServiceObject = Resources.Load("Prefabs/Services/AchievementsService") as GameObject;
+        Achievements = _achievementsServiceObject.GetComponent<AchievementsService>();
       }
     }
   }
